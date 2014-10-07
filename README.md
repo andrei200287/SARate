@@ -59,8 +59,8 @@ SARate is a library to get positive app reviews on the AppStore.  SARate is a su
     [SARite sharedInstance].previewMode = YES;
     
     [SARite sharedInstance].email = @"andrei@solovjev.com";
-	  [SARite sharedInstance].emailSubject = @"App";
-	  [SARite sharedInstance].emailText = @"Disadvantages: ";
+    [SARite sharedInstance].emailSubject = @"App";
+    [SARite sharedInstance].emailText = @"Disadvantages: ";
     [SARite sharedInstance].headerLabelText = @"Like app?";
     [SARite sharedInstance].descriptionLabelText = @"Touch the star to rate.";
     [SARite sharedInstance].rateButtonLabelText = @"Rate";
