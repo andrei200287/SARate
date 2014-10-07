@@ -1,5 +1,4 @@
 # SARate
-======
 
 SARate is a library to get positive app reviews on the AppStore.  SARate is a subclass of  [iRate](https://github.com/nicklockwood/iRate).
 
