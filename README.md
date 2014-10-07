@@ -30,6 +30,8 @@ SARate is a library to get positive app reviews on the AppStore.  SARate is a su
 
 ## Example Usage
 
+Add the SARate configuration code in your AppDelegate's  initialize  method:
+
 ``` objective-c
 #import "SARate.h"
 
