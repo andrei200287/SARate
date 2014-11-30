@@ -61,7 +61,7 @@ Add the SARate configuration code in your AppDelegate's  initialize  method:
     [SARate sharedInstance].previewMode = YES;
     
     [SARate sharedInstance].email = @"andrei@solovjev.com";
-    [SARate sharedInstance].emailSubject = @"App";
+    [SARate sharedInstance].emailSubject = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
     [SARate sharedInstance].emailText = @"Disadvantages: ";
     [SARate sharedInstance].headerLabelText = @"Like app?";
     [SARate sharedInstance].descriptionLabelText = @"Touch the star to rate.";
