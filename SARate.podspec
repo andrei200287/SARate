@@ -8,5 +8,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "5.0"
   s.requires_arc = TRUE
   s.source       = { :git => "https://github.com/andrei200287/SARate.git", :tag => s.version.to_s }
-  s.source_files = "SARate/*.{h,m}", "SARate/iRate/*.{h,m}"
+  s.source_files = "SARate/*.{h,m}"
+  s.exclude_files = "ViewController.h"
+  s.resources = "SARate/*.png"
+  s.dependency "iRate", "~> 1.7.5"
+  s.frameworks = "UIKit", "MessageUI", "QuartzCore"
 end
