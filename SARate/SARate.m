@@ -62,6 +62,7 @@
     _mySARateViewController.emailText = self.emailText;
     _mySARateViewController.emailErrorAlertText = self.emailErrorAlertText;
     _mySARateViewController.okText = self.okText;
+    _mySARateViewController.minAppStoreRaiting = self.minAppStoreRaiting;
     
     [_mySARateViewController.view setFrame:[[UIScreen mainScreen] bounds]];
     
@@ -228,6 +229,14 @@
         _okText = NSLocalizedString(@"OK", @"");
     }
     return _okText;
+}
+
+
+-(int)minAppStoreRaiting{
+    if (_minAppStoreRaiting == 0){
+        _minAppStoreRaiting = 5;
+    }
+    return _minAppStoreRaiting;
 }
 
 

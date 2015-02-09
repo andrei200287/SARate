@@ -190,9 +190,7 @@
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:_setRaitingAlertTitle message:_setRaitingAlertMessage delegate:nil cancelButtonTitle:_okText otherButtonTitles:nil];
         [alertView show];
         return;
-    }
-    
-    if (_mark == 5){
+    } else if (_mark >= _minAppStoreRaiting){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_appstoreRaitingAlertTitle
                                                         message:_appstoreRaitingAlertMessage
                                                        delegate:self

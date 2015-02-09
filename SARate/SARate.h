@@ -49,5 +49,6 @@
 @property (nonatomic, strong) NSString *emailErrorAlertTitle;
 @property (nonatomic, strong) NSString *emailErrorAlertText;
 @property (nonatomic, strong) NSString *okText;
+@property (nonatomic, assign) int minAppStoreRaiting;
 
 @end
