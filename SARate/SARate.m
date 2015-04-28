@@ -71,7 +71,9 @@
     [window addSubview:_mySARateViewController.view];
     
     //inform about prompt
-    [self.delegate iRateDidPromptForRating];
+    if ([self.delegate respondsToSelector:@selector(iRateDidPromptForRating)]) {
+        [self.delegate iRateDidPromptForRating];
+    }
     
 }
 
