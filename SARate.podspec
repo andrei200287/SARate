@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SARate"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "SARate - SARate is a library to get positive app reviews on the AppStore."
   s.homepage     = "https://github.com/andrei200287/SARate"
   s.license      = { :type => "MIT", :file => "LICENSE" }
