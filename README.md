@@ -23,6 +23,10 @@ SARate is a library to get positive app reviews on the AppStore.  SARate is a su
 
 ## Installation
 
+CocoaPods: `pod "SARate"`
+
+or
+
 1. Drop `SARate` files into your project.
 2. Add `QuartzCore.framework`, `MessageUI.framework` to your project.
 
