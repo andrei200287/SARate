@@ -168,7 +168,7 @@
 - (void)setRaiting:(id)object {
     if ([object isKindOfClass:[UIButton class]]) {
         UIButton *currentButton = (UIButton *)object;
-        _mark = currentButton.tag;
+        _mark = (int) currentButton.tag;
         _star1.selected = (currentButton.tag >= _star1.tag);
         _star2.selected = (currentButton.tag >= _star2.tag);
         _star3.selected = (currentButton.tag >= _star3.tag);
