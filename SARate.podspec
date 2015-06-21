@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = "SARate/*.{h,m}"
   s.exclude_files = "ViewController.h"
   s.resources = "SARate/*.png"
-  s.dependency "iRate", "~> 1.11.3"
+  s.dependency "iRate", "~> 1.11.4"
   s.frameworks = "UIKit", "MessageUI", "QuartzCore"
 end
