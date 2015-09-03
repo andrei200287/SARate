@@ -49,12 +49,12 @@
     _mySARateViewController.descriptionLabelText = self.descriptionLabelText;
     _mySARateViewController.rateButtonLabelText = self.rateButtonLabelText;
     _mySARateViewController.cancelButtonLabelText = self.cancelButtonLabelText;
-    _mySARateViewController.setRaitingAlertTitle = self.setRaitingAlertTitle;
-    _mySARateViewController.setRaitingAlertMessage = self.setRaitingAlertMessage;
-    _mySARateViewController.appstoreRaitingAlertTitle = self.appstoreRaitingAlertTitle;
-    _mySARateViewController.appstoreRaitingAlertMessage = self.appstoreRaitingAlertMessage;
-    _mySARateViewController.appstoreRaitingCancel = self.appstoreRaitingCancel;
-    _mySARateViewController.appstoreRaitingButton = self.appstoreRaitingButton;
+    _mySARateViewController.setRatingAlertTitle = self.setRatingAlertTitle;
+    _mySARateViewController.setRatingAlertMessage = self.setRatingAlertMessage;
+    _mySARateViewController.appstoreRatingAlertTitle = self.appstoreRatingAlertTitle;
+    _mySARateViewController.appstoreRatingAlertMessage = self.appstoreRatingAlertMessage;
+    _mySARateViewController.appstoreRatingCancel = self.appstoreRatingCancel;
+    _mySARateViewController.appstoreRatingButton = self.appstoreRatingButton;
     _mySARateViewController.disadvantagesAlertTitle = self.disadvantagesAlertTitle;
     _mySARateViewController.disadvantagesAlertMessage = self.disadvantagesAlertMessage;
     _mySARateViewController.email = self.email;
@@ -62,7 +62,7 @@
     _mySARateViewController.emailText = self.emailText;
     _mySARateViewController.emailErrorAlertText = self.emailErrorAlertText;
     _mySARateViewController.okText = self.okText;
-    _mySARateViewController.minAppStoreRaiting = self.minAppStoreRaiting;
+    _mySARateViewController.minAppStoreRating = self.minAppStoreRating;
     
     [_mySARateViewController.view setFrame:[[UIScreen mainScreen] bounds]];
     
@@ -121,51 +121,51 @@
 }
 
 
--(NSString *)setRaitingAlertTitle{
-    if (_setRaitingAlertTitle == nil){
-        _setRaitingAlertTitle = NSLocalizedString(@"Rate", @"");
+-(NSString *)setRatingAlertTitle{
+    if (_setRatingAlertTitle == nil){
+        _setRatingAlertTitle = NSLocalizedString(@"Rate", @"");
     }
-    return _setRaitingAlertTitle;
+    return _setRatingAlertTitle;
 }
 
 
--(NSString *)setRaitingAlertMessage{
-    if (_setRaitingAlertMessage == nil){
-        _setRaitingAlertMessage = NSLocalizedString(@"Touch the star to rate.", @"");
+-(NSString *)setRatingAlertMessage{
+    if (_setRatingAlertMessage == nil){
+        _setRatingAlertMessage = NSLocalizedString(@"Touch the star to rate.", @"");
     }
-    return _setRaitingAlertMessage;
+    return _setRatingAlertMessage;
 }
 
 
--(NSString *)appstoreRaitingAlertTitle{
-    if (_appstoreRaitingAlertTitle == nil){
-        _appstoreRaitingAlertTitle = NSLocalizedString(@"Write a review on the AppStore", @"");
+-(NSString *)appstoreRatingAlertTitle{
+    if (_appstoreRatingAlertTitle == nil){
+        _appstoreRatingAlertTitle = NSLocalizedString(@"Write a review on the AppStore", @"");
     }
-    return _appstoreRaitingAlertTitle;
+    return _appstoreRatingAlertTitle;
 }
 
 
--(NSString *)appstoreRaitingAlertMessage{
-    if (_appstoreRaitingAlertMessage == nil){
-        _appstoreRaitingAlertMessage = NSLocalizedString(@"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!", @"");
+-(NSString *)appstoreRatingAlertMessage{
+    if (_appstoreRatingAlertMessage == nil){
+        _appstoreRatingAlertMessage = NSLocalizedString(@"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!", @"");
     }
-    return _appstoreRaitingAlertMessage;
+    return _appstoreRatingAlertMessage;
 }
 
 
--(NSString *)appstoreRaitingCancel{
-    if (_appstoreRaitingCancel == nil){
-        _appstoreRaitingCancel = NSLocalizedString(@"Cancel", @"");
+-(NSString *)appstoreRatingCancel{
+    if (_appstoreRatingCancel == nil){
+        _appstoreRatingCancel = NSLocalizedString(@"Cancel", @"");
     }
-    return _appstoreRaitingCancel;
+    return _appstoreRatingCancel;
 }
 
 
--(NSString *)appstoreRaitingButton{
-    if (_appstoreRaitingButton == nil){
-        _appstoreRaitingButton = NSLocalizedString(@"Rate It Now", @"");
+-(NSString *)appstoreRatingButton{
+    if (_appstoreRatingButton == nil){
+        _appstoreRatingButton = NSLocalizedString(@"Rate It Now", @"");
     }
-    return _appstoreRaitingButton;
+    return _appstoreRatingButton;
 }
 
 
@@ -234,11 +234,11 @@
 }
 
 
--(int)minAppStoreRaiting{
-    if (_minAppStoreRaiting == 0){
-        _minAppStoreRaiting = 5;
+-(int)minAppStoreRating{
+    if (_minAppStoreRating == 0){
+        _minAppStoreRating = 5;
     }
-    return _minAppStoreRaiting;
+    return _minAppStoreRating;
 }
 
 

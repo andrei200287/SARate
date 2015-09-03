@@ -85,7 +85,7 @@
     _star1 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_star1 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
     [_star1 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star1 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+    [_star1 addTarget:self action:@selector(setRating:) forControlEvents:UIControlEventTouchUpInside];
     _star1.tag = 1;
     _star1.frame = CGRectMake(43, starY, starWeight, starHeight);
     [alertView addSubview:_star1];
@@ -95,7 +95,7 @@
     _star2 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_star2 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
     [_star2 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star2 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+    [_star2 addTarget:self action:@selector(setRating:) forControlEvents:UIControlEventTouchUpInside];
     _star2.tag = 2;
     _star2.frame = CGRectMake(_star1.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
     [alertView addSubview:_star2];
@@ -104,7 +104,7 @@
     _star3 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_star3 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
     [_star3 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star3 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+    [_star3 addTarget:self action:@selector(setRating:) forControlEvents:UIControlEventTouchUpInside];
     _star3.tag = 3;
     _star3.frame = CGRectMake(_star2.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
     [alertView addSubview:_star3];
@@ -113,7 +113,7 @@
     _star4 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_star4 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
     [_star4 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star4 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+    [_star4 addTarget:self action:@selector(setRating:) forControlEvents:UIControlEventTouchUpInside];
     _star4.tag = 4;
     _star4.frame = CGRectMake(_star3.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
     [alertView addSubview:_star4];
@@ -122,7 +122,7 @@
     _star5 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_star5 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
     [_star5 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star5 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+    [_star5 addTarget:self action:@selector(setRating:) forControlEvents:UIControlEventTouchUpInside];
     _star5.tag = 5;
     _star5.frame = CGRectMake(_star4.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
     [alertView addSubview:_star5];
@@ -138,7 +138,7 @@
     [rateButton setTitle:_rateButtonLabelText forState:UIControlStateNormal];
     rateButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     rateButton.titleLabel.textColor = [UIColor colorWithRed:26.0/255.0 green:134.0/255.0 blue:252.0/255.0 alpha:1];
-    [rateButton addTarget:self action:@selector(setRaiting) forControlEvents:UIControlEventTouchUpInside];
+    [rateButton addTarget:self action:@selector(setRating) forControlEvents:UIControlEventTouchUpInside];
     rateButton.layer.borderWidth = 1;
     rateButton.layer.borderColor = [[UIColor colorWithRed:181.0/255.0 green:181.0/255.0 blue:181.0/255.0 alpha:1] CGColor];
     [alertView addSubview:rateButton];
@@ -154,7 +154,7 @@
     [cancelButton setTitle:_cancelButtonLabelText forState:UIControlStateNormal];
     cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
     cancelButton.titleLabel.textColor = [UIColor colorWithRed:26.0/255.0 green:134.0/255.0 blue:252.0/255.0 alpha:1];
-    [cancelButton addTarget:self action:@selector(hideRaiting) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton addTarget:self action:@selector(hideRating) forControlEvents:UIControlEventTouchUpInside];
     cancelButton.layer.borderWidth = 1;
     cancelButton.layer.borderColor = [[UIColor colorWithRed:181.0/255.0 green:181.0/255.0 blue:181.0/255.0 alpha:1] CGColor];
     [alertView addSubview:cancelButton];
@@ -165,7 +165,7 @@
 
 
 
-- (void)setRaiting:(id)object {
+- (void)setRating:(id)object {
     if ([object isKindOfClass:[UIButton class]]) {
         UIButton *currentButton = (UIButton *)object;
         _mark = (int) currentButton.tag;
@@ -178,24 +178,24 @@
 }
 
 
--(void)hideRaiting{
+-(void)hideRating{
     [iRate sharedInstance].lastReminded = [NSDate date];
     _isShowed = NO;
     [self.view removeFromSuperview];
 }
 
 
--(void)setRaiting{
+-(void)setRating{
     if (_mark == 0){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:_setRaitingAlertTitle message:_setRaitingAlertMessage delegate:nil cancelButtonTitle:_okText otherButtonTitles:nil];
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:_setRatingAlertTitle message:_setRatingAlertMessage delegate:nil cancelButtonTitle:_okText otherButtonTitles:nil];
         [alertView show];
         return;
-    } else if (_mark >= _minAppStoreRaiting){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_appstoreRaitingAlertTitle
-                                                        message:_appstoreRaitingAlertMessage
+    } else if (_mark >= _minAppStoreRating){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_appstoreRatingAlertTitle
+                                                        message:_appstoreRatingAlertMessage
                                                        delegate:self
-                                              cancelButtonTitle:_appstoreRaitingCancel
-                                              otherButtonTitles:_appstoreRaitingButton, nil];
+                                              cancelButtonTitle:_appstoreRatingCancel
+                                              otherButtonTitles:_appstoreRatingButton, nil];
         [alert show];
         return;
         
