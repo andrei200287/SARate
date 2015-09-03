@@ -35,12 +35,12 @@
 @property (nonatomic, strong) NSString *descriptionLabelText;
 @property (nonatomic, strong) NSString *rateButtonLabelText;
 @property (nonatomic, strong) NSString *cancelButtonLabelText;
-@property (nonatomic, strong) NSString *setRaitingAlertTitle;
-@property (nonatomic, strong) NSString *setRaitingAlertMessage;
-@property (nonatomic, strong) NSString *appstoreRaitingAlertTitle;
-@property (nonatomic, strong) NSString *appstoreRaitingAlertMessage;
-@property (nonatomic, strong) NSString *appstoreRaitingCancel;
-@property (nonatomic, strong) NSString *appstoreRaitingButton;
+@property (nonatomic, strong) NSString *setRatingAlertTitle;
+@property (nonatomic, strong) NSString *setRatingAlertMessage;
+@property (nonatomic, strong) NSString *appstoreRatingAlertTitle;
+@property (nonatomic, strong) NSString *appstoreRatingAlertMessage;
+@property (nonatomic, strong) NSString *appstoreRatingCancel;
+@property (nonatomic, strong) NSString *appstoreRatingButton;
 @property (nonatomic, strong) NSString *disadvantagesAlertTitle;
 @property (nonatomic, strong) NSString *disadvantagesAlertMessage;
 @property (nonatomic, strong) NSString *email;
@@ -49,6 +49,6 @@
 @property (nonatomic, strong) NSString *emailErrorAlertTitle;
 @property (nonatomic, strong) NSString *emailErrorAlertText;
 @property (nonatomic, strong) NSString *okText;
-@property (nonatomic, assign) int minAppStoreRaiting;
+@property (nonatomic, assign) int minAppStoreRating;
 
 @end

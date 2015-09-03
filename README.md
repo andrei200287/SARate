@@ -66,19 +66,19 @@ Add the SARate configuration code in your AppDelegate's  initialize  method:
     
     [SARate sharedInstance].email = @"andrei@solovjev.com";
     // 4 and 5 stars
-    [SARate sharedInstance].minAppStoreRaiting = 4;
+    [SARate sharedInstance].minAppStoreRating = 4;
     [SARate sharedInstance].emailSubject = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
     [SARate sharedInstance].emailText = @"Disadvantages: ";
     [SARate sharedInstance].headerLabelText = @"Like app?";
     [SARate sharedInstance].descriptionLabelText = @"Touch the star to rate.";
     [SARate sharedInstance].rateButtonLabelText = @"Rate";
     [SARate sharedInstance].cancelButtonLabelText = @"Not Now";
-    [SARate sharedInstance].setRaitingAlertTitle = @"Rate";
-    [SARate sharedInstance].setRaitingAlertMessage = @"Touch the star to rate.";
-    [SARate sharedInstance].appstoreRaitingAlertTitle = @"Write a review on the AppStore";
-    [SARate sharedInstance].appstoreRaitingAlertMessage = @"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!";
-    [SARate sharedInstance].appstoreRaitingCancel = @"Cancel";
-    [SARate sharedInstance].appstoreRaitingButton = @"Rate It Now";
+    [SARate sharedInstance].setRatingAlertTitle = @"Rate";
+    [SARate sharedInstance].setRatingAlertMessage = @"Touch the star to rate.";
+    [SARate sharedInstance].appstoreRatingAlertTitle = @"Write a review on the AppStore";
+    [SARate sharedInstance].appstoreRatingAlertMessage = @"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!";
+    [SARate sharedInstance].appstoreRatingCancel = @"Cancel";
+    [SARate sharedInstance].appstoreRatingButton = @"Rate It Now";
     [SARate sharedInstance].disadvantagesAlertTitle = @"Disadvantages";
     [SARate sharedInstance].disadvantagesAlertMessage = @"Please specify the deficiencies in the application. We will try to fix it!";
 }
