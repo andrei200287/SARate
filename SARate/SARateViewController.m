@@ -37,7 +37,7 @@
 @property (nonatomic, strong) UIButton *star4;
 @property (nonatomic, strong) UIButton *star5;
 
-@property (nonatomic, assign) int mark;
+@property (nonatomic, assign) NSInteger mark;
 
 @end
 
