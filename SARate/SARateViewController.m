@@ -232,8 +232,8 @@
         
         NSArray *toRecipients = [NSArray arrayWithObjects:_email, nil];
         [mailer setToRecipients:toRecipients];
-        [mailer setSubject:_emailSubject];
-        NSString *emailBody = _emailText;
+        [mailer setSubject:[_emailSubject stringByReplacingOccurrencesOfString:@"{mark}" withString:[[NSNumber numberWithInt: _mark] stringValue]]];
+        NSString *emailBody = [_emailText stringByReplacingOccurrencesOfString:@"{mark}" withString:[[NSNumber numberWithInt: _mark] stringValue]];
         [mailer setMessageBody:emailBody isHTML:YES];
         mailer.mailComposeDelegate = self;
         
