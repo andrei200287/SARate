@@ -15,6 +15,15 @@
 		49CDEA4C1C8019EE001371AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEA4A1C8019EE001371AB /* LaunchScreen.storyboard */; };
 		49CDEA571C8019EE001371AB /* SARateExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA561C8019EE001371AB /* SARateExampleTests.m */; };
 		49CDEA621C8019EE001371AB /* SARateExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA611C8019EE001371AB /* SARateExampleUITests.m */; };
+		49CDEAEB1C802652001371AB /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEADF1C802652001371AB /* iRate.bundle */; };
+		49CDEAEC1C802652001371AB /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEAE11C802652001371AB /* iRate.m */; };
+		49CDEAED1C802652001371AB /* SARate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEAE21C802652001371AB /* SARate.bundle */; };
+		49CDEAEE1C802652001371AB /* SARate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEAE41C802652001371AB /* SARate.m */; };
+		49CDEAEF1C802652001371AB /* SARateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEAE61C802652001371AB /* SARateViewController.m */; };
+		49CDEB031C802C16001371AB /* star-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEAFF1C802C16001371AB /* star-gray.png */; };
+		49CDEB041C802C16001371AB /* star-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB001C802C16001371AB /* star-gray@2x.png */; };
+		49CDEB051C802C16001371AB /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB011C802C16001371AB /* star.png */; };
+		49CDEB061C802C16001371AB /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB021C802C16001371AB /* star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,18 @@
 		49CDEA5D1C8019EE001371AB /* SARateExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SARateExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CDEA611C8019EE001371AB /* SARateExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SARateExampleUITests.m; sourceTree = "<group>"; };
 		49CDEA631C8019EE001371AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CDEADF1C802652001371AB /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		49CDEAE01C802652001371AB /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		49CDEAE11C802652001371AB /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		49CDEAE21C802652001371AB /* SARate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SARate.bundle; sourceTree = "<group>"; };
+		49CDEAE31C802652001371AB /* SARate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARate.h; sourceTree = "<group>"; };
+		49CDEAE41C802652001371AB /* SARate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARate.m; sourceTree = "<group>"; };
+		49CDEAE51C802652001371AB /* SARateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARateViewController.h; sourceTree = "<group>"; };
+		49CDEAE61C802652001371AB /* SARateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARateViewController.m; sourceTree = "<group>"; };
+		49CDEAFF1C802C16001371AB /* star-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray.png"; sourceTree = "<group>"; };
+		49CDEB001C802C16001371AB /* star-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray@2x.png"; sourceTree = "<group>"; };
+		49CDEB011C802C16001371AB /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		49CDEB021C802C16001371AB /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +122,7 @@
 		49CDEA3B1C8019EE001371AB /* SARateExample */ = {
 			isa = PBXGroup;
 			children = (
+				49CDEADD1C802652001371AB /* SARate */,
 				49CDEA3F1C8019EE001371AB /* AppDelegate.h */,
 				49CDEA401C8019EE001371AB /* AppDelegate.m */,
 				49CDEA421C8019EE001371AB /* ViewController.h */,
@@ -138,6 +160,42 @@
 				49CDEA631C8019EE001371AB /* Info.plist */,
 			);
 			path = SARateExampleUITests;
+			sourceTree = "<group>";
+		};
+		49CDEADD1C802652001371AB /* SARate */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEAFE1C802C16001371AB /* SAResources */,
+				49CDEADE1C802652001371AB /* iRate */,
+				49CDEAE21C802652001371AB /* SARate.bundle */,
+				49CDEAE31C802652001371AB /* SARate.h */,
+				49CDEAE41C802652001371AB /* SARate.m */,
+				49CDEAE51C802652001371AB /* SARateViewController.h */,
+				49CDEAE61C802652001371AB /* SARateViewController.m */,
+			);
+			name = SARate;
+			path = ../../../SARate;
+			sourceTree = "<group>";
+		};
+		49CDEADE1C802652001371AB /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEADF1C802652001371AB /* iRate.bundle */,
+				49CDEAE01C802652001371AB /* iRate.h */,
+				49CDEAE11C802652001371AB /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
+		49CDEAFE1C802C16001371AB /* SAResources */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEAFF1C802C16001371AB /* star-gray.png */,
+				49CDEB001C802C16001371AB /* star-gray@2x.png */,
+				49CDEB011C802C16001371AB /* star.png */,
+				49CDEB021C802C16001371AB /* star@2x.png */,
+			);
+			path = SAResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CDEA4C1C8019EE001371AB /* LaunchScreen.storyboard in Resources */,
+				49CDEB041C802C16001371AB /* star-gray@2x.png in Resources */,
+				49CDEAEB1C802652001371AB /* iRate.bundle in Resources */,
+				49CDEB031C802C16001371AB /* star-gray.png in Resources */,
+				49CDEAED1C802652001371AB /* SARate.bundle in Resources */,
+				49CDEB051C802C16001371AB /* star.png in Resources */,
+				49CDEB061C802C16001371AB /* star@2x.png in Resources */,
 				49CDEA491C8019EE001371AB /* Assets.xcassets in Resources */,
 				49CDEA471C8019EE001371AB /* Main.storyboard in Resources */,
 			);
@@ -270,9 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CDEAEE1C802652001371AB /* SARate.m in Sources */,
 				49CDEA441C8019EE001371AB /* ViewController.m in Sources */,
 				49CDEA411C8019EE001371AB /* AppDelegate.m in Sources */,
 				49CDEA3E1C8019EE001371AB /* main.m in Sources */,
+				49CDEAEF1C802652001371AB /* SARateViewController.m in Sources */,
+				49CDEAEC1C802652001371AB /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
