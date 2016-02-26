@@ -71,7 +71,9 @@
     _mySARateViewController.emailErrorAlertText = self.emailErrorAlertText;
     _mySARateViewController.okText = self.okText;
     _mySARateViewController.minAppStoreRaiting = self.minAppStoreRaiting;
-    
+	_mySARateViewController.notSelectedStarImage = self.notSelectedStarImage;
+	_mySARateViewController.selectedStarImage = self.selectedStarImage;
+	
     [_mySARateViewController.view setFrame:[[UIScreen mainScreen] bounds]];
     
     
@@ -248,6 +250,26 @@
     }
     return _minAppStoreRaiting;
 }
+
+
+- (UIImage *)notSelectedStarImage
+{
+	if (!_notSelectedStarImage)
+	{
+		_notSelectedStarImage = [UIImage imageNamed:@"SARate_star-gray"];
+	}
+	return _notSelectedStarImage;
+}
+
+- (UIImage *)selectedStarImage
+{
+	if (!_selectedStarImage)
+	{
+		_selectedStarImage = [UIImage imageNamed:@"SARate_star"];
+	}
+	return _selectedStarImage;
+}
+
 
 @end
 

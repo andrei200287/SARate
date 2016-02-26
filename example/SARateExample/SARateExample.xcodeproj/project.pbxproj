@@ -20,10 +20,10 @@
 		49CDEAED1C802652001371AB /* SARate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEAE21C802652001371AB /* SARate.bundle */; };
 		49CDEAEE1C802652001371AB /* SARate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEAE41C802652001371AB /* SARate.m */; };
 		49CDEAEF1C802652001371AB /* SARateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEAE61C802652001371AB /* SARateViewController.m */; };
-		49CDEB031C802C16001371AB /* star-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEAFF1C802C16001371AB /* star-gray.png */; };
-		49CDEB041C802C16001371AB /* star-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB001C802C16001371AB /* star-gray@2x.png */; };
-		49CDEB051C802C16001371AB /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB011C802C16001371AB /* star.png */; };
-		49CDEB061C802C16001371AB /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB021C802C16001371AB /* star@2x.png */; };
+		49CDEB031C802C16001371AB /* SARate_star-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEAFF1C802C16001371AB /* SARate_star-gray.png */; };
+		49CDEB041C802C16001371AB /* SARate_star-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB001C802C16001371AB /* SARate_star-gray@2x.png */; };
+		49CDEB051C802C16001371AB /* SARate_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB011C802C16001371AB /* SARate_star.png */; };
+		49CDEB061C802C16001371AB /* SARate_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEB021C802C16001371AB /* SARate_star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +68,10 @@
 		49CDEAE41C802652001371AB /* SARate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARate.m; sourceTree = "<group>"; };
 		49CDEAE51C802652001371AB /* SARateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARateViewController.h; sourceTree = "<group>"; };
 		49CDEAE61C802652001371AB /* SARateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARateViewController.m; sourceTree = "<group>"; };
-		49CDEAFF1C802C16001371AB /* star-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray.png"; sourceTree = "<group>"; };
-		49CDEB001C802C16001371AB /* star-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray@2x.png"; sourceTree = "<group>"; };
-		49CDEB011C802C16001371AB /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		49CDEB021C802C16001371AB /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		49CDEAFF1C802C16001371AB /* SARate_star-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SARate_star-gray.png"; sourceTree = "<group>"; };
+		49CDEB001C802C16001371AB /* SARate_star-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SARate_star-gray@2x.png"; sourceTree = "<group>"; };
+		49CDEB011C802C16001371AB /* SARate_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SARate_star.png; sourceTree = "<group>"; };
+		49CDEB021C802C16001371AB /* SARate_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SARate_star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +190,10 @@
 		49CDEAFE1C802C16001371AB /* SAResources */ = {
 			isa = PBXGroup;
 			children = (
-				49CDEAFF1C802C16001371AB /* star-gray.png */,
-				49CDEB001C802C16001371AB /* star-gray@2x.png */,
-				49CDEB011C802C16001371AB /* star.png */,
-				49CDEB021C802C16001371AB /* star@2x.png */,
+				49CDEAFF1C802C16001371AB /* SARate_star-gray.png */,
+				49CDEB001C802C16001371AB /* SARate_star-gray@2x.png */,
+				49CDEB011C802C16001371AB /* SARate_star.png */,
+				49CDEB021C802C16001371AB /* SARate_star@2x.png */,
 			);
 			path = SAResources;
 			sourceTree = "<group>";
@@ -302,12 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CDEA4C1C8019EE001371AB /* LaunchScreen.storyboard in Resources */,
-				49CDEB041C802C16001371AB /* star-gray@2x.png in Resources */,
+				49CDEB041C802C16001371AB /* SARate_star-gray@2x.png in Resources */,
 				49CDEAEB1C802652001371AB /* iRate.bundle in Resources */,
-				49CDEB031C802C16001371AB /* star-gray.png in Resources */,
+				49CDEB031C802C16001371AB /* SARate_star-gray.png in Resources */,
 				49CDEAED1C802652001371AB /* SARate.bundle in Resources */,
-				49CDEB051C802C16001371AB /* star.png in Resources */,
-				49CDEB061C802C16001371AB /* star@2x.png in Resources */,
+				49CDEB051C802C16001371AB /* SARate_star.png in Resources */,
+				49CDEB061C802C16001371AB /* SARate_star@2x.png in Resources */,
 				49CDEA491C8019EE001371AB /* Assets.xcassets in Resources */,
 				49CDEA471C8019EE001371AB /* Main.storyboard in Resources */,
 			);
