@@ -42,6 +42,8 @@
 
 @end
 
+#define SALocalizedString(key, comment) [self SARate_localizedStringForKey:key withDefault:key]
+
 
 @implementation SARate
 
@@ -101,7 +103,7 @@
 
 -(NSString *)headerLabelText{
     if (_headerLabelText == nil){
-        _headerLabelText = [NSString stringWithFormat:NSLocalizedString(@"Like %@?", @""), self.applicationName];
+        _headerLabelText = [NSString stringWithFormat:SALocalizedString(@"Like %@?", @""), self.applicationName];
     }
     return _headerLabelText;
 }
@@ -109,7 +111,7 @@
 
 -(NSString *)descriptionLabelText{
     if (_descriptionLabelText == nil){
-        _descriptionLabelText = NSLocalizedString(@"Touch the star to rate.", @"");
+        _descriptionLabelText = SALocalizedString(@"Touch the star to rate.", @"");
     }
     return _descriptionLabelText;
 }
@@ -117,7 +119,7 @@
 
 -(NSString *)rateButtonLabelText{
     if (_rateButtonLabelText == nil){
-        _rateButtonLabelText = NSLocalizedString(@"Rate", @"");
+        _rateButtonLabelText = SALocalizedString(@"Rate", @"");
     }
     return _rateButtonLabelText;
 }
@@ -125,7 +127,7 @@
 
 -(NSString *)cancelButtonLabelText{
     if (_cancelButtonLabelText == nil){
-        _cancelButtonLabelText = NSLocalizedString(@"Not Now", @"");
+        _cancelButtonLabelText = SALocalizedString(@"Not Now", @"");
     }
     return _cancelButtonLabelText;
 }
@@ -133,7 +135,7 @@
 
 -(NSString *)setRaitingAlertTitle{
     if (_setRaitingAlertTitle == nil){
-        _setRaitingAlertTitle = NSLocalizedString(@"Rate", @"");
+        _setRaitingAlertTitle = SALocalizedString(@"Rate", @"");
     }
     return _setRaitingAlertTitle;
 }
@@ -141,7 +143,7 @@
 
 -(NSString *)setRaitingAlertMessage{
     if (_setRaitingAlertMessage == nil){
-        _setRaitingAlertMessage = NSLocalizedString(@"Touch the star to rate.", @"");
+        _setRaitingAlertMessage = SALocalizedString(@"Touch the star to rate.", @"");
     }
     return _setRaitingAlertMessage;
 }
@@ -149,7 +151,7 @@
 
 -(NSString *)appstoreRaitingAlertTitle{
     if (_appstoreRaitingAlertTitle == nil){
-        _appstoreRaitingAlertTitle = NSLocalizedString(@"Write a review on the AppStore", @"");
+        _appstoreRaitingAlertTitle = SALocalizedString(@"Write a review on the AppStore", @"");
     }
     return _appstoreRaitingAlertTitle;
 }
@@ -157,7 +159,7 @@
 
 -(NSString *)appstoreRaitingAlertMessage{
     if (_appstoreRaitingAlertMessage == nil){
-        _appstoreRaitingAlertMessage = NSLocalizedString(@"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!", @"");
+        _appstoreRaitingAlertMessage = SALocalizedString(@"Would you mind taking a moment to rate it on the AppStore? It won’t take more than a minute. Thanks for your support!", @"");
     }
     return _appstoreRaitingAlertMessage;
 }
@@ -165,7 +167,7 @@
 
 -(NSString *)appstoreRaitingCancel{
     if (_appstoreRaitingCancel == nil){
-        _appstoreRaitingCancel = NSLocalizedString(@"Cancel", @"");
+        _appstoreRaitingCancel = SALocalizedString(@"Cancel", @"");
     }
     return _appstoreRaitingCancel;
 }
@@ -173,7 +175,7 @@
 
 -(NSString *)appstoreRaitingButton{
     if (_appstoreRaitingButton == nil){
-        _appstoreRaitingButton = NSLocalizedString(@"Rate It Now", @"");
+        _appstoreRaitingButton = SALocalizedString(@"Rate It Now", @"");
     }
     return _appstoreRaitingButton;
 }
@@ -181,7 +183,7 @@
 
 -(NSString *)disadvantagesAlertTitle{
     if (_disadvantagesAlertTitle == nil){
-        _disadvantagesAlertTitle = NSLocalizedString(@"Disadvantages", @"");
+        _disadvantagesAlertTitle = SALocalizedString(@"Disadvantages", @"");
     }
     return _disadvantagesAlertTitle;
 }
@@ -189,7 +191,7 @@
 
 -(NSString *)disadvantagesAlertMessage{
     if (_disadvantagesAlertMessage == nil){
-        _disadvantagesAlertMessage = NSLocalizedString(@"Please specify the deficiencies in the application. We will try to fix it!", @"");
+        _disadvantagesAlertMessage = SALocalizedString(@"Please specify the deficiencies in the application. We will try to fix it!", @"");
     }
     return _disadvantagesAlertMessage;
 }
@@ -221,7 +223,7 @@
 
 -(NSString *)emailErrorAlertTitle{
     if (_emailErrorAlertTitle == nil){
-        _emailErrorAlertTitle = NSLocalizedString(@"Error", @"");
+        _emailErrorAlertTitle = SALocalizedString(@"Error", @"");
     }
     return _emailErrorAlertTitle;
 }
@@ -229,7 +231,7 @@
 
 -(NSString *)emailErrorAlertText{
     if (_emailErrorAlertText == nil){
-        _emailErrorAlertText = NSLocalizedString(@"Sending error", @"");
+        _emailErrorAlertText = SALocalizedString(@"Sending error", @"");
     }
     return _emailErrorAlertText;
 }
@@ -238,7 +240,7 @@
 
 -(NSString *)okText{
     if (_okText == nil){
-        _okText = NSLocalizedString(@"OK", @"");
+        _okText = SALocalizedString(@"OK", @"");
     }
     return _okText;
 }
