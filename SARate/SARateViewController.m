@@ -43,7 +43,7 @@ _Pragma("clang diagnostic pop")                                     \
 
 @interface SARateViewController ()
 
-@property (nonatomic, strong) NSMutableArray<UIButton*>* starButtons;
+@property (nonatomic, strong) NSMutableArray<UIControl*>* starButtons;
 
 /*@property (nonatomic, strong) UIButton *star1;
 @property (nonatomic, strong) UIButton *star2;
@@ -62,7 +62,7 @@ _Pragma("clang diagnostic pop")                                     \
 
 @interface SARateViewController (Private)
 
-- (UIButton*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame;
+- (UIControl*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame;
 - (UIButton*)_createStarButton;
 
 - (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message completition:(void(^)(void))completition;
@@ -81,7 +81,7 @@ _Pragma("clang diagnostic pop")                                     \
     self.view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
 	
 	
-	_starButtons = [[NSMutableArray<UIButton*> alloc] initWithCapacity:NUMBER_OF_STARS];
+	_starButtons = [[NSMutableArray<UIControl*> alloc] initWithCapacity:NUMBER_OF_STARS];
 	
     float width = 260.0;
     float height = 190.0;
@@ -117,8 +117,9 @@ _Pragma("clang diagnostic pop")                                     \
 	for (NSInteger i = 0; i < NUMBER_OF_STARS; i++)
 	{
 		CGRect frame = CGRectMake(i * (separatorWidth + starWeight) + 43, starY, starWeight, starHeight);
-		UIButton* starButton = [self _createStartButtonWithTag:i frame:frame];
+		UIControl* starButton = [self _createStartButtonWithTag:i frame:frame];
 		[alertView addSubview:starButton];
+		[self.starButtons addObject:starButton];
 	}
 	
     UIButton *rateButton;
@@ -158,10 +159,10 @@ _Pragma("clang diagnostic pop")                                     \
 
 #pragma mark Actions
 - (void)setRaiting:(id)object {
-	if ([object isKindOfClass:[UIButton class]]) {
-		UIButton *currentButton = (UIButton *)object;
+	if ([object isKindOfClass:[UIView class]]) {
+		UIView *currentButton = (UIView *)object;
 		_mark = (int) currentButton.tag;
-		[self.starButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		[self.starButtons enumerateObjectsUsingBlock:^(UIControl * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 			obj.selected = (_mark >= obj.tag);
 		}];
 	}
@@ -316,7 +317,7 @@ _Pragma("clang diagnostic pop")
 #pragma mark -
 @implementation SARateViewController (Private)
 
-- (UIButton*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame
+- (UIControl*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame
 {
 	UIButton* starButton = [self _createStarButton];
 	starButton.tag = tag;
@@ -329,8 +330,8 @@ _Pragma("clang diagnostic pop")
 - (UIButton*)_createStarButton
 {
 	UIButton* starButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	[starButton setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-	[starButton setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
+	[starButton setImage:[UIImage imageNamed:@"SARate_star-gray.png"] forState:UIControlStateNormal];
+	[starButton setImage:[UIImage imageNamed:@"SARate_star.png"] forState:UIControlStateSelected];
 	[starButton addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
 	
 	return starButton;
