@@ -28,18 +28,50 @@
 #import "SARateViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "iRate.h"
+#import "SARate.h"
+
+#define NUMBER_OF_STARS (5)
+
+//http://stackoverflow.com/questions/2622017/suppressing-deprecated-warnings-in-xcode
+#define SILENCE_DEPRECATION(expr)                                   \
+do {                                                                \
+_Pragma("clang diagnostic push")                                    \
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")   \
+expr;                                                               \
+_Pragma("clang diagnostic pop")                                     \
+} while(0)
+
 
 @interface SARateViewController ()
 
-@property (nonatomic, strong) UIButton *star1;
+@property (nonatomic, strong) NSMutableArray<UIControl*>* starButtons;
+
+/*@property (nonatomic, strong) UIButton *star1;
 @property (nonatomic, strong) UIButton *star2;
 @property (nonatomic, strong) UIButton *star3;
 @property (nonatomic, strong) UIButton *star4;
-@property (nonatomic, strong) UIButton *star5;
+@property (nonatomic, strong) UIButton *star5;*/
 
 @property (nonatomic, assign) int mark;
 
+- (void)cancelRaiting:(id)sender;
+- (void)applyRaiting:(id)sender;
+- (void)setRaiting:(id)object;
+
 @end
+
+
+@interface SARateViewController (Private)
+
+- (UIControl*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame;
+- (UIButton*)_createStarButton;
+- (UIViewController*)_controllerForModalPresenting;
+
+- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message okAction:(void(^)(void))okAction completition:(void(^)(void))completition;
+- (BOOL)_canUseAlertController;
+
+@end
+
 
 @implementation SARateViewController
 
@@ -49,8 +81,10 @@
     _mark = 0;
     
     self.view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
-    
-    
+	
+	
+	_starButtons = [[NSMutableArray<UIControl*> alloc] initWithCapacity:NUMBER_OF_STARS];
+	
     float width = 260.0;
     float height = 190.0;
     UIView *alertView = [[UIView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-(width/2), (self.view.frame.size.height/2)-(height/2), width, height)];
@@ -81,53 +115,15 @@
     float starHeight = 30.0;
     float starY = 85.0;
     float separatorWidth = 5.0;
-    
-    _star1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_star1 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-    [_star1 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star1 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
-    _star1.tag = 1;
-    _star1.frame = CGRectMake(43, starY, starWeight, starHeight);
-    [alertView addSubview:_star1];
-    // 30 на 30
-    
-    
-    _star2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_star2 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-    [_star2 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star2 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
-    _star2.tag = 2;
-    _star2.frame = CGRectMake(_star1.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
-    [alertView addSubview:_star2];
-    
-    
-    _star3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_star3 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-    [_star3 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star3 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
-    _star3.tag = 3;
-    _star3.frame = CGRectMake(_star2.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
-    [alertView addSubview:_star3];
-    
-    
-    _star4 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_star4 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-    [_star4 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star4 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
-    _star4.tag = 4;
-    _star4.frame = CGRectMake(_star3.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
-    [alertView addSubview:_star4];
-    
-    
-    _star5 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_star5 setImage:[UIImage imageNamed:@"star-gray.png"] forState:UIControlStateNormal];
-    [_star5 setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateSelected];
-    [_star5 addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
-    _star5.tag = 5;
-    _star5.frame = CGRectMake(_star4.frame.origin.x+starWeight+separatorWidth, starY, starWeight, starHeight);
-    [alertView addSubview:_star5];
-    
-    
+	
+	for (NSInteger i = 0; i < NUMBER_OF_STARS; i++)
+	{
+		CGRect frame = CGRectMake(i * (separatorWidth + starWeight) + 43, starY, starWeight, starHeight);
+		UIControl* starButton = [self _createStartButtonWithTag:i + 1 frame:frame];
+		[alertView addSubview:starButton];
+		[self.starButtons addObject:starButton];
+	}
+	
     UIButton *rateButton;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         rateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -138,11 +134,10 @@
     [rateButton setTitle:_rateButtonLabelText forState:UIControlStateNormal];
     rateButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     rateButton.titleLabel.textColor = [UIColor colorWithRed:26.0/255.0 green:134.0/255.0 blue:252.0/255.0 alpha:1];
-    [rateButton addTarget:self action:@selector(setRaiting) forControlEvents:UIControlEventTouchUpInside];
+    [rateButton addTarget:self action:@selector(applyRaiting:) forControlEvents:UIControlEventTouchUpInside];
     rateButton.layer.borderWidth = 1;
     rateButton.layer.borderColor = [[UIColor colorWithRed:181.0/255.0 green:181.0/255.0 blue:181.0/255.0 alpha:1] CGColor];
     [alertView addSubview:rateButton];
-    
     
     UIButton *cancelButton;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
@@ -154,7 +149,7 @@
     [cancelButton setTitle:_cancelButtonLabelText forState:UIControlStateNormal];
     cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
     cancelButton.titleLabel.textColor = [UIColor colorWithRed:26.0/255.0 green:134.0/255.0 blue:252.0/255.0 alpha:1];
-    [cancelButton addTarget:self action:@selector(hideRaiting) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton addTarget:self action:@selector(cancelRaiting:) forControlEvents:UIControlEventTouchUpInside];
     cancelButton.layer.borderWidth = 1;
     cancelButton.layer.borderColor = [[UIColor colorWithRed:181.0/255.0 green:181.0/255.0 blue:181.0/255.0 alpha:1] CGColor];
     [alertView addSubview:cancelButton];
@@ -164,51 +159,86 @@
 }
 
 
-
+#pragma mark Actions
 - (void)setRaiting:(id)object {
-    if ([object isKindOfClass:[UIButton class]]) {
-        UIButton *currentButton = (UIButton *)object;
-        _mark = (int) currentButton.tag;
-        _star1.selected = (currentButton.tag >= _star1.tag);
-        _star2.selected = (currentButton.tag >= _star2.tag);
-        _star3.selected = (currentButton.tag >= _star3.tag);
-        _star4.selected = (currentButton.tag >= _star4.tag);
-        _star5.selected = (currentButton.tag >= _star5.tag);
-    }
+	if ([object isKindOfClass:[UIView class]]) {
+		UIView *currentButton = (UIView *)object;
+		_mark = (int) currentButton.tag;
+		[self.starButtons enumerateObjectsUsingBlock:^(UIControl * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			obj.selected = (_mark >= obj.tag);
+		}];
+	}
 }
 
 
--(void)hideRaiting{
-    [iRate sharedInstance].lastReminded = [NSDate date];
-    _isShowed = NO;
-    [self.view removeFromSuperview];
+- (void)cancelRaiting:(id)sender{
+	[iRate sharedInstance].lastReminded = [NSDate date];
+	_isShowed = NO;
+	[self.view removeFromSuperview];
 }
 
 
--(void)setRaiting{
-    if (_mark == 0){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:_setRaitingAlertTitle message:_setRaitingAlertMessage delegate:nil cancelButtonTitle:_okText otherButtonTitles:nil];
-        [alertView show];
-        return;
-    } else if (_mark >= _minAppStoreRaiting){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_appstoreRaitingAlertTitle
-                                                        message:_appstoreRaitingAlertMessage
-                                                       delegate:self
-                                              cancelButtonTitle:_appstoreRaitingCancel
-                                              otherButtonTitles:_appstoreRaitingButton, nil];
-        [alert show];
-        return;
-        
-        
-    }
-    
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:_disadvantagesAlertTitle message:_disadvantagesAlertMessage delegate:nil cancelButtonTitle:_okText otherButtonTitles:nil];
-    [alertView show];
-    [self sendMail];
-    
+- (void)applyRaiting:(id)sender{
+	[self.view removeFromSuperview];
+	
+	if (_mark == 0)
+	{
+		[self _displayOkAlertWithTitle:_setRaitingAlertTitle
+													 message:_setRaitingAlertMessage
+									 okAction:nil
+											completition:nil];
+	} else if (_mark >= _minAppStoreRaiting)
+	{
+		if ([self _canUseAlertController])
+		{
+			UIAlertController* alert = [UIAlertController alertControllerWithTitle:_appstoreRaitingAlertTitle message:_appstoreRaitingAlertMessage preferredStyle:UIAlertControllerStyleAlert];
+			UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:_appstoreRaitingCancel
+																												 style:UIAlertActionStyleCancel
+																											 handler:^(UIAlertAction * _Nonnull action) {
+																												 [iRate sharedInstance].ratedThisVersion = YES;
+																												 _isShowed = NO;
+																												 [self.view removeFromSuperview];
+																											 }];
+			[alert addAction:cancelAction];
+			UIAlertAction* rateAction = [UIAlertAction actionWithTitle:_appstoreRaitingButton
+																													 style:UIAlertActionStyleDefault
+																												 handler:^(UIAlertAction * _Nonnull action) {
+																													 [iRate sharedInstance].ratedThisVersion = YES;
+																														[[iRate sharedInstance] openRatingsPageInAppStore];
+																													 _isShowed = NO;
+																													 [self.view removeFromSuperview];
+																												 }];
+			[alert addAction:rateAction];
+			[[self _controllerForModalPresenting] presentViewController:alert animated:YES completion:nil];
+		}
+		else
+		{
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_appstoreRaitingAlertTitle
+																											message:_appstoreRaitingAlertMessage
+																										 delegate:self
+																						cancelButtonTitle:_appstoreRaitingCancel
+																						otherButtonTitles:_appstoreRaitingButton, nil];
+			[alert show];
+_Pragma("clang diagnostic pop")
+		}
+	}
+	else
+	{
+		[self _displayOkAlertWithTitle:_disadvantagesAlertTitle
+													 message:_disadvantagesAlertMessage
+													okAction:^{
+			[self sendMail];
+		}
+											completition:nil];
+	}
 }
 
 
+#pragma mark UIAlerViewDelegate
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     [iRate sharedInstance].ratedThisVersion = YES;
@@ -217,9 +247,8 @@
     }
     _isShowed = NO;
     [self.view removeFromSuperview];
-    
-
 }
+_Pragma("clang diagnostic pop")
 
 
 #pragma mark - Mail
@@ -240,19 +269,21 @@
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             mailer.modalPresentationStyle = UIModalPresentationPageSheet;
         }
-        
-        [self presentModalViewController:mailer animated:YES];
-        
+			
+			if ([self respondsToSelector:@selector(presentViewController:animated:completion:)])
+			{
+				[[self _controllerForModalPresenting] presentViewController:mailer
+													 animated:YES
+												 completion:nil];
+			}
+			else
+			{
+				SILENCE_DEPRECATION([self presentModalViewController:mailer animated:YES];);
+			}
     } else {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_emailErrorAlertTitle
-                                                        message:_emailErrorAlertText
-                                                       delegate:nil
-                                              cancelButtonTitle:_okText
-                                              otherButtonTitles: nil];
-        [alert show];
+			
+			[self _displayOkAlertWithTitle:_emailErrorAlertTitle message:_emailErrorAlertText okAction:nil completition:nil];
     }
-
 }
 
 
@@ -288,5 +319,89 @@
     
 }
 
+@end
+
+
+#pragma mark -
+@implementation SARateViewController (Private)
+
+- (UIControl*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame
+{
+	UIButton* starButton = [self _createStarButton];
+	starButton.tag = tag;
+	starButton.frame = frame;
+	
+	return starButton;
+}
+
+
+- (UIButton*)_createStarButton
+{
+	UIButton* starButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[starButton setImage:[UIImage imageNamed:@"SARate_star-gray.png"] forState:UIControlStateNormal];
+	[starButton setImage:[UIImage imageNamed:@"SARate_star.png"] forState:UIControlStateSelected];
+	[starButton addTarget:self action:@selector(setRaiting:) forControlEvents:UIControlEventTouchUpInside];
+	
+	return starButton;
+}
+
+
+- (UIViewController*)_controllerForModalPresenting
+{
+	UIWindow* activeWindow = [UIApplication sharedApplication].keyWindow;
+	UIViewController* presentedController = [activeWindow rootViewController];
+	while (presentedController.presentedViewController != nil)
+	{
+		presentedController = presentedController.presentedViewController;
+	}
+	
+	return presentedController;
+}
+
+
+- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message okAction:(void(^)(void))okCallbackAction completition:(void(^)(void))completition
+{
+	if ([self _canUseAlertController])
+	{
+		UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title
+																																						 message:message
+																																			preferredStyle:UIAlertControllerStyleAlert];
+		UIAlertAction* okAction = [UIAlertAction actionWithTitle:_okText
+																											 style:UIAlertActionStyleCancel
+																										 handler:^(UIAlertAction * _Nonnull action) {
+																											 if (okCallbackAction)
+																											 {
+																												 okCallbackAction();
+																											 }
+																										 }];
+		[alertController addAction:okAction];
+		[[self _controllerForModalPresenting] presentViewController:alertController animated:YES completion:completition];
+	}
+	else
+	{
+		SILENCE_DEPRECATION(UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+																																				message:message
+																																			 delegate:nil
+																															cancelButtonTitle:_okText
+																															otherButtonTitles: nil];
+												[alert show];
+												);
+		if (completition)
+		{
+			completition();
+		}
+		if (okCallbackAction)
+		{
+			okCallbackAction();
+		}
+	}
+}
+
+
+- (BOOL)_canUseAlertController
+{
+	BOOL can = NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1;
+	return can;
+}
 
 @end

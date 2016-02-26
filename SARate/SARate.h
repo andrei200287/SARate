@@ -50,5 +50,7 @@
 @property (nonatomic, strong) NSString *emailErrorAlertText;
 @property (nonatomic, strong) NSString *okText;
 @property (nonatomic, assign) int minAppStoreRaiting;
+@property (nonatomic, strong) UIImage* notSelectedStarImage;
+@property (nonatomic, strong) UIImage* selectedStarImage;
 
 @end
