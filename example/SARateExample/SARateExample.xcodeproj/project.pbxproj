@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49CDEA3E1C8019EE001371AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA3D1C8019EE001371AB /* main.m */; };
+		49CDEA411C8019EE001371AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA401C8019EE001371AB /* AppDelegate.m */; };
+		49CDEA441C8019EE001371AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA431C8019EE001371AB /* ViewController.m */; };
+		49CDEA471C8019EE001371AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEA451C8019EE001371AB /* Main.storyboard */; };
+		49CDEA491C8019EE001371AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEA481C8019EE001371AB /* Assets.xcassets */; };
+		49CDEA4C1C8019EE001371AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CDEA4A1C8019EE001371AB /* LaunchScreen.storyboard */; };
+		49CDEA571C8019EE001371AB /* SARateExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA561C8019EE001371AB /* SARateExampleTests.m */; };
+		49CDEA621C8019EE001371AB /* SARateExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDEA611C8019EE001371AB /* SARateExampleUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49CDEA531C8019EE001371AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CDEA311C8019EE001371AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49CDEA381C8019EE001371AB;
+			remoteInfo = SARateExample;
+		};
+		49CDEA5E1C8019EE001371AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CDEA311C8019EE001371AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49CDEA381C8019EE001371AB;
+			remoteInfo = SARateExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49CDEA391C8019EE001371AB /* SARateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SARateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CDEA3D1C8019EE001371AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49CDEA3F1C8019EE001371AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49CDEA401C8019EE001371AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49CDEA421C8019EE001371AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		49CDEA431C8019EE001371AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		49CDEA461C8019EE001371AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49CDEA481C8019EE001371AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49CDEA4B1C8019EE001371AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49CDEA4D1C8019EE001371AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CDEA521C8019EE001371AB /* SARateExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SARateExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CDEA561C8019EE001371AB /* SARateExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SARateExampleTests.m; sourceTree = "<group>"; };
+		49CDEA581C8019EE001371AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CDEA5D1C8019EE001371AB /* SARateExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SARateExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CDEA611C8019EE001371AB /* SARateExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SARateExampleUITests.m; sourceTree = "<group>"; };
+		49CDEA631C8019EE001371AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49CDEA361C8019EE001371AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA4F1C8019EE001371AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA5A1C8019EE001371AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49CDEA301C8019EE001371AB = {
+			isa = PBXGroup;
+			children = (
+				49CDEA3B1C8019EE001371AB /* SARateExample */,
+				49CDEA551C8019EE001371AB /* SARateExampleTests */,
+				49CDEA601C8019EE001371AB /* SARateExampleUITests */,
+				49CDEA3A1C8019EE001371AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49CDEA3A1C8019EE001371AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEA391C8019EE001371AB /* SARateExample.app */,
+				49CDEA521C8019EE001371AB /* SARateExampleTests.xctest */,
+				49CDEA5D1C8019EE001371AB /* SARateExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49CDEA3B1C8019EE001371AB /* SARateExample */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEA3F1C8019EE001371AB /* AppDelegate.h */,
+				49CDEA401C8019EE001371AB /* AppDelegate.m */,
+				49CDEA421C8019EE001371AB /* ViewController.h */,
+				49CDEA431C8019EE001371AB /* ViewController.m */,
+				49CDEA451C8019EE001371AB /* Main.storyboard */,
+				49CDEA481C8019EE001371AB /* Assets.xcassets */,
+				49CDEA4A1C8019EE001371AB /* LaunchScreen.storyboard */,
+				49CDEA4D1C8019EE001371AB /* Info.plist */,
+				49CDEA3C1C8019EE001371AB /* Supporting Files */,
+			);
+			path = SARateExample;
+			sourceTree = "<group>";
+		};
+		49CDEA3C1C8019EE001371AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEA3D1C8019EE001371AB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49CDEA551C8019EE001371AB /* SARateExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEA561C8019EE001371AB /* SARateExampleTests.m */,
+				49CDEA581C8019EE001371AB /* Info.plist */,
+			);
+			path = SARateExampleTests;
+			sourceTree = "<group>";
+		};
+		49CDEA601C8019EE001371AB /* SARateExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49CDEA611C8019EE001371AB /* SARateExampleUITests.m */,
+				49CDEA631C8019EE001371AB /* Info.plist */,
+			);
+			path = SARateExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49CDEA381C8019EE001371AB /* SARateExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CDEA661C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExample" */;
+			buildPhases = (
+				49CDEA351C8019EE001371AB /* Sources */,
+				49CDEA361C8019EE001371AB /* Frameworks */,
+				49CDEA371C8019EE001371AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SARateExample;
+			productName = SARateExample;
+			productReference = 49CDEA391C8019EE001371AB /* SARateExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49CDEA511C8019EE001371AB /* SARateExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CDEA691C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExampleTests" */;
+			buildPhases = (
+				49CDEA4E1C8019EE001371AB /* Sources */,
+				49CDEA4F1C8019EE001371AB /* Frameworks */,
+				49CDEA501C8019EE001371AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49CDEA541C8019EE001371AB /* PBXTargetDependency */,
+			);
+			name = SARateExampleTests;
+			productName = SARateExampleTests;
+			productReference = 49CDEA521C8019EE001371AB /* SARateExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49CDEA5C1C8019EE001371AB /* SARateExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CDEA6C1C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExampleUITests" */;
+			buildPhases = (
+				49CDEA591C8019EE001371AB /* Sources */,
+				49CDEA5A1C8019EE001371AB /* Frameworks */,
+				49CDEA5B1C8019EE001371AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49CDEA5F1C8019EE001371AB /* PBXTargetDependency */,
+			);
+			name = SARateExampleUITests;
+			productName = SARateExampleUITests;
+			productReference = 49CDEA5D1C8019EE001371AB /* SARateExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49CDEA311C8019EE001371AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = SA;
+				TargetAttributes = {
+					49CDEA381C8019EE001371AB = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					49CDEA511C8019EE001371AB = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 49CDEA381C8019EE001371AB;
+					};
+					49CDEA5C1C8019EE001371AB = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 49CDEA381C8019EE001371AB;
+					};
+				};
+			};
+			buildConfigurationList = 49CDEA341C8019EE001371AB /* Build configuration list for PBXProject "SARateExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49CDEA301C8019EE001371AB;
+			productRefGroup = 49CDEA3A1C8019EE001371AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49CDEA381C8019EE001371AB /* SARateExample */,
+				49CDEA511C8019EE001371AB /* SARateExampleTests */,
+				49CDEA5C1C8019EE001371AB /* SARateExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49CDEA371C8019EE001371AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CDEA4C1C8019EE001371AB /* LaunchScreen.storyboard in Resources */,
+				49CDEA491C8019EE001371AB /* Assets.xcassets in Resources */,
+				49CDEA471C8019EE001371AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA501C8019EE001371AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA5B1C8019EE001371AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49CDEA351C8019EE001371AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CDEA441C8019EE001371AB /* ViewController.m in Sources */,
+				49CDEA411C8019EE001371AB /* AppDelegate.m in Sources */,
+				49CDEA3E1C8019EE001371AB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA4E1C8019EE001371AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CDEA571C8019EE001371AB /* SARateExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CDEA591C8019EE001371AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CDEA621C8019EE001371AB /* SARateExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49CDEA541C8019EE001371AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49CDEA381C8019EE001371AB /* SARateExample */;
+			targetProxy = 49CDEA531C8019EE001371AB /* PBXContainerItemProxy */;
+		};
+		49CDEA5F1C8019EE001371AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49CDEA381C8019EE001371AB /* SARateExample */;
+			targetProxy = 49CDEA5E1C8019EE001371AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49CDEA451C8019EE001371AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49CDEA461C8019EE001371AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49CDEA4A1C8019EE001371AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49CDEA4B1C8019EE001371AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49CDEA641C8019EE001371AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49CDEA651C8019EE001371AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49CDEA671C8019EE001371AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SARateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49CDEA681C8019EE001371AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SARateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49CDEA6A1C8019EE001371AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SARateExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SARateExample.app/SARateExample";
+			};
+			name = Debug;
+		};
+		49CDEA6B1C8019EE001371AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SARateExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SARateExample.app/SARateExample";
+			};
+			name = Release;
+		};
+		49CDEA6D1C8019EE001371AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SARateExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SARateExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		49CDEA6E1C8019EE001371AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SARateExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SA.SARateExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SARateExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49CDEA341C8019EE001371AB /* Build configuration list for PBXProject "SARateExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CDEA641C8019EE001371AB /* Debug */,
+				49CDEA651C8019EE001371AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49CDEA661C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CDEA671C8019EE001371AB /* Debug */,
+				49CDEA681C8019EE001371AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49CDEA691C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CDEA6A1C8019EE001371AB /* Debug */,
+				49CDEA6B1C8019EE001371AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49CDEA6C1C8019EE001371AB /* Build configuration list for PBXNativeTarget "SARateExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CDEA6D1C8019EE001371AB /* Debug */,
+				49CDEA6E1C8019EE001371AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49CDEA311C8019EE001371AB /* Project object */;
+}
