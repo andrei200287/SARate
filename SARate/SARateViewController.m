@@ -28,6 +28,7 @@
 #import "SARateViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "iRate.h"
+#import "SARate.h"
 
 #define NUMBER_OF_STARS (5)
 
@@ -64,8 +65,9 @@ _Pragma("clang diagnostic pop")                                     \
 
 - (UIControl*)_createStartButtonWithTag:(NSInteger)tag frame:(CGRect)frame;
 - (UIButton*)_createStarButton;
+- (UIViewController*)_controllerForModalPresenting;
 
-- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message completition:(void(^)(void))completition;
+- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message okAction:(void(^)(void))okAction completition:(void(^)(void))completition;
 - (BOOL)_canUseAlertController;
 
 @end
@@ -117,7 +119,7 @@ _Pragma("clang diagnostic pop")                                     \
 	for (NSInteger i = 0; i < NUMBER_OF_STARS; i++)
 	{
 		CGRect frame = CGRectMake(i * (separatorWidth + starWeight) + 43, starY, starWeight, starHeight);
-		UIControl* starButton = [self _createStartButtonWithTag:i frame:frame];
+		UIControl* starButton = [self _createStartButtonWithTag:i + 1 frame:frame];
 		[alertView addSubview:starButton];
 		[self.starButtons addObject:starButton];
 	}
@@ -177,10 +179,13 @@ _Pragma("clang diagnostic pop")                                     \
 
 
 - (void)applyRaiting:(id)sender{
+	[self.view removeFromSuperview];
+	
 	if (_mark == 0)
 	{
 		[self _displayOkAlertWithTitle:_setRaitingAlertTitle
 													 message:_setRaitingAlertMessage
+									 okAction:nil
 											completition:nil];
 	} else if (_mark >= _minAppStoreRaiting)
 	{
@@ -204,7 +209,7 @@ _Pragma("clang diagnostic pop")                                     \
 																													 [self.view removeFromSuperview];
 																												 }];
 			[alert addAction:rateAction];
-			[self presentViewController:alert animated:YES completion:nil];
+			[[self _controllerForModalPresenting] presentViewController:alert animated:YES completion:nil];
 		}
 		else
 		{
@@ -221,9 +226,12 @@ _Pragma("clang diagnostic pop")
 	}
 	else
 	{
-		[self _displayOkAlertWithTitle:_disadvantagesAlertTitle message:_disadvantagesAlertMessage completition:^{
+		[self _displayOkAlertWithTitle:_disadvantagesAlertTitle
+													 message:_disadvantagesAlertMessage
+													okAction:^{
 			[self sendMail];
-		}];
+		}
+											completition:nil];
 	}
 }
 
@@ -264,7 +272,7 @@ _Pragma("clang diagnostic pop")
 			
 			if ([self respondsToSelector:@selector(presentViewController:animated:completion:)])
 			{
-				[self presentViewController:mailer
+				[[self _controllerForModalPresenting] presentViewController:mailer
 													 animated:YES
 												 completion:nil];
 			}
@@ -274,7 +282,7 @@ _Pragma("clang diagnostic pop")
 			}
     } else {
 			
-			[self _displayOkAlertWithTitle:_emailErrorAlertTitle message:_emailErrorAlertText completition:nil];
+			[self _displayOkAlertWithTitle:_emailErrorAlertTitle message:_emailErrorAlertText okAction:nil completition:nil];
     }
 }
 
@@ -338,7 +346,20 @@ _Pragma("clang diagnostic pop")
 }
 
 
-- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message completition:(void(^)(void))completition
+- (UIViewController*)_controllerForModalPresenting
+{
+	UIWindow* activeWindow = [UIApplication sharedApplication].keyWindow;
+	UIViewController* presentedController = [activeWindow rootViewController];
+	while (presentedController.presentedViewController != nil)
+	{
+		presentedController = presentedController.presentedViewController;
+	}
+	
+	return presentedController;
+}
+
+
+- (void)_displayOkAlertWithTitle:(NSString*)title message:(NSString*)message okAction:(void(^)(void))okCallbackAction completition:(void(^)(void))completition
 {
 	if ([self _canUseAlertController])
 	{
@@ -348,9 +369,13 @@ _Pragma("clang diagnostic pop")
 		UIAlertAction* okAction = [UIAlertAction actionWithTitle:_okText
 																											 style:UIAlertActionStyleCancel
 																										 handler:^(UIAlertAction * _Nonnull action) {
+																											 if (okCallbackAction)
+																											 {
+																												 okCallbackAction();
+																											 }
 																										 }];
 		[alertController addAction:okAction];
-		[self presentViewController:alertController animated:YES completion:completition];
+		[[self _controllerForModalPresenting] presentViewController:alertController animated:YES completion:completition];
 	}
 	else
 	{
@@ -364,6 +389,10 @@ _Pragma("clang diagnostic pop")
 		if (completition)
 		{
 			completition();
+		}
+		if (okCallbackAction)
+		{
+			okCallbackAction();
 		}
 	}
 }

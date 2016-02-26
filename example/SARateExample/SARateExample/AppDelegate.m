@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SARate.h"
+
 
 @interface AppDelegate ()
 
@@ -16,6 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	SARate* rate = [SARate sharedInstance];
+	[rate setPreviewMode:YES];
+	[rate setPromptAtLaunch:YES];
+	rate.emailSubject = @"Subject";
+	rate.email = @"scalli-k-be@ya.ru";
+	rate.emailText = @"Problem with ";
+	
 	// Override point for customization after application launch.
 	return YES;
 }
