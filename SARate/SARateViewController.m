@@ -241,7 +241,7 @@
             mailer.modalPresentationStyle = UIModalPresentationPageSheet;
         }
         
-        [self presentViewController:mailer animated:true completion:nil];
+        [self presentViewController:mailer animated:YES completion:nil];
         
     } else {
         
